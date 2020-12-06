@@ -25,15 +25,21 @@ class rateVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.insertData()
+        
+        self.rate?.oview.tbl.addItemEx("")
+        self.rate?.oview.tbl.addItemEx("")
+        self.rate?.oview.tbl.refresh()
+        
+        self.rate?.oview.kprice.putTotal(100.0, tax: 11.0)
+        
+        self.rate?.oview.tbl.stamp.isHidden = false
+        
+        self.rate?.oview.kadr .putData("Jon",
+                                       street: "street",
+                                       city: "city",
+                                       phone: "12345678")
     }
     
-    func insertData() {
-        rate?.addDscr("Hello")
-        rate?.addLogo("https://raw.githubusercontent.com/nativejong/mCart/main/images/japangirl.jpg", date: nil)
-        rate?.addPhoto("https://raw.githubusercontent.com/nativejong/mCart/main/images/japan.png", date: nil)
-        rate?.refresh()
-    }
     
     override func viewWillLayoutSubviews() {
         let w = self.view.frame.size.width;
