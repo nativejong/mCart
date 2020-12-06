@@ -1,0 +1,6 @@
+framework module mCart {
+  umbrella header "mCart.h"
+
+  export *
+  module * { export * }
+}
